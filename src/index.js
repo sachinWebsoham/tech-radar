@@ -90,7 +90,7 @@ const externalLinkExtractor = async (currentUrl, domain) => {
                   .insert({ url: validUrl, status_code: res.status });
               }
             } catch (error) {
-              console.log("Error-inside-extractor", error.message);
+              // console.log("Error-inside-extractor", error.message);
             }
           }
         }
