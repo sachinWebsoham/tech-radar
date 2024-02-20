@@ -106,10 +106,10 @@ const crawlPages = async (baseUrl, domain) => {
   try {
     const locUrls = await locUrlExtractor(baseUrl, domain);
     console.log(`Total of Pages: ${locUrls?.length} `);
-    let i = 1;
+    // let i = 1;
     for (const locUrl of locUrls) {
       if (locUrl) {
-        console.log(i++);
+        // console.log(i++);
         await externalLinkExtractor(locUrl, domain).then(async (result) => {
           if (result?.length > 0) {
             const results = await filteration(result);
