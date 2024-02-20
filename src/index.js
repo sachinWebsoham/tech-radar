@@ -6,6 +6,8 @@ const { supabase } = require("../config/config");
 const cheerio = require("cheerio");
 const TLDs = require("./tldList");
 const ccLTD = require("./cctldList");
+const app = require("express")();
+
 let urls = [];
 
 const validDomain = (domain) => {
@@ -201,8 +203,13 @@ const filteration = async (urls) => {
   });
 };
 
-crawlPages(baseUrl, domain)
-  .then(async (result) => {
-    console.log(result, "real");
-  })
-  .catch((e) => console.log("Error-crawling-result:", e.message));
+app.get("/", async (req, res) => {
+  crawlPages(baseUrl, domain)
+    .then(async (result) => {
+      console.log(result, "real");
+      res.send(result);
+    })
+    .catch((e) => console.log("Error-crawling-result:", e.message));
+});
+
+app.listen(3000, () => console.log("running on 3000"));
