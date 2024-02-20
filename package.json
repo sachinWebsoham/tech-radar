@@ -1,12 +1,13 @@
 {
-  "name": "xml-domain-filter",
+  "name": "tech-radar",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/index.js",
-    "dev": "nodemon ./src/index.js"
+    "dev": "nodemon ./src/index.js",
+    "build": "nodemon build",
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +16,6 @@
     "@supabase/supabase-js": "^2.39.7",
     "axios": "^1.6.7",
     "cheerio": "^1.0.0-rc.12",
-    "dotenv": "^16.4.5",
-    "firebase": "^10.8.0",
-    "firebase-admin": "^12.0.0",
-    "mongoose": "^8.1.2"
+    "dotenv": "^16.4.5"
   }
 }
